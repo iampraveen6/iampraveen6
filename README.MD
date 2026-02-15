@@ -143,12 +143,17 @@ I'm passionate about **Site Reliability Engineering** and **DevOps**, focused on
 ## 📊 **GitHub Analytics**
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=iampraveen6&show_icons=true&theme=radical&count_private=true&hide_border=true" width="48%" />
+  <img src="https://github-readme-stats.vercel.app/api?username=iampraveen6&show_icons=true&theme=radical&count_private=true&hide_border=true&include_all_commits=true" width="48%" />
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=iampraveen6&theme=radical&hide_border=true" width="48%" />
 </p>
 
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=iampraveen6&layout=compact&theme=radical&hide_border=true" width="45%" />
+</p>
+
+<!-- Alternative with your actual stats -->
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=iampraveen6&theme=react-dark&hide_border=true&area=true" width="95%" />
 </p>
 
 ---
@@ -164,7 +169,12 @@ I'm passionate about **Site Reliability Engineering** and **DevOps**, focused on
 ## 🏆 **GitHub Trophies**
 
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=iampraveen6&theme=radical&no-frame=true&no-bg=false&margin-w=4&row=2&column=4" />
+  <img src="https://github-profile-trophy.vercel.app/?username=iampraveen6&theme=radical&no-frame=true&no-bg=false&margin-w=4&row=2&column=4" width="100%" />
+</p>
+
+<!-- Alternative compact view -->
+<p align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=iampraveen6&theme=onedark&no-frame=true&no-bg=false&margin-w=4&column=7" width="100%" />
 </p>
 
 ---
@@ -197,20 +207,29 @@ Add these to your profile by going to each repository and clicking "Pin" in the 
 
 ---
 
-<div align="center">
-  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical" />
-</div>
+### 💭 **Quotes I Live By**
+
+<p align="center">
+  <i>“I think one of the most valuable rules is avoid duplication.”</i> <br/>
+  <b>- Martin Fowler</b>
+</p>
+
+<p align="center">
+  <i>“First, solve the problem. Then, write the code.”</i> <br/>
+  <b>– John Johnson</b>
+</p>
 
 ---
 
-<p align="center">
-  <i>“First, solve the problem. Then, write the code.” – John Johnson</i>
-</p>
+### 🐍 **Snake Animation**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/iampraveen6/iampraveen6/output/snake.svg" alt="Snake animation" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/iampraveen6/iampraveen6/output/github-contribution-grid-snake-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/iampraveen6/iampraveen6/output/github-contribution-grid-snake.svg" />
+    <img alt="github-snake" src="https://raw.githubusercontent.com/iampraveen6/iampraveen6/output/github-contribution-grid-snake.svg" />
+  </picture>
 </p>
-
 ---
 
 ⭐️ From [iampraveen6](https://github.com/iampraveen6)
