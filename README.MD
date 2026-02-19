@@ -171,10 +171,14 @@ I'm passionate about **Site Reliability Engineering** and **DevOps**, focused on
 ## 🏆 **GitHub Trophies**
 
 <p align="center">
-  <img 
-    src="https://github-profile-trophy.vercel.app/?username=iampraveen6&theme=tokyonight&no-frame=true&no-bg=true&margin-w=8&row=1&column=7" 
-    alt="GitHub Trophies" width="100%" />
+  <a href="https://github.com/ryo-ma/github-profile-trophy">
+    <img
+      alt="GitHub Trophies"
+      src="https://github-profile-trophy.vercel.app/?username=iampraveen6&theme=tokyonight&no-frame=true&no-bg=true&margin-w=8&row=1&column=7"
+    />
+  </a>
 </p>
+
 
 ---
 
@@ -228,5 +232,6 @@ Add these to your profile by going to each repository and clicking "Pin" in the 
 
 
 ⭐️ From [iampraveen6](https://github.com/iampraveen6)
+
 
 
