@@ -140,22 +140,24 @@ I'm passionate about **Site Reliability Engineering** and **DevOps**, focused on
 
 ---
 
-## 📊 **GitHub Analytics**
+### 📊 **GitHub Analytics**
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=iampraveen6&show_icons=true&theme=radical&count_private=true&hide_border=true&include_all_commits=true" width="48%" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=iampraveen6&theme=radical&hide_border=true" width="48%" />
-</p>
+<div align="center">
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=iampraveen6&layout=compact&theme=radical&hide_border=true" width="45%" />
-</p>
+<!-- Profile details -->
+![Profile Details](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=iampraveen6&theme=github_dark)
 
-<!-- Alternative with your actual stats -->
-<p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=iampraveen6&theme=react-dark&hide_border=true&area=true" width="95%" />
-</p>
+<!-- General stats -->
+![General Stats](https://github-profile-summary-cards.vercel.app/api/cards/stats?username=iampraveen6&theme=github_dark)
 
+<!-- Languages -->
+![Top Languages by Repo](https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=iampraveen6&theme=github_dark)
+![Most Commit Languages](https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=iampraveen6&theme=github_dark)
+
+<!-- Productive time (IST≈UTC+5 to 6; cards take integer offsets) -->
+![Productive Time](https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=iampraveen6&theme=github_dark&utcOffset=5)
+
+</div>
 ---
 
 ## 📈 **Contribution Graph**
@@ -169,12 +171,9 @@ I'm passionate about **Site Reliability Engineering** and **DevOps**, focused on
 ## 🏆 **GitHub Trophies**
 
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=iampraveen6&theme=radical&no-frame=true&no-bg=false&margin-w=4&row=2&column=4" width="100%" />
-</p>
-
-<!-- Alternative compact view -->
-<p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=iampraveen6&theme=onedark&no-frame=true&no-bg=false&margin-w=4&column=7" width="100%" />
+  <img 
+    src="https://github-profile-trophy.vercel.app/?username=iampraveen6&theme=tokyonight&no-frame=true&no-bg=true&margin-w=8&row=1&column=7" 
+    alt="GitHub Trophies" width="100%" />
 </p>
 
 ---
@@ -229,4 +228,5 @@ Add these to your profile by going to each repository and clicking "Pin" in the 
 
 
 ⭐️ From [iampraveen6](https://github.com/iampraveen6)
+
 
