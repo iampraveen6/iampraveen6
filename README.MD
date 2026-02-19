@@ -223,13 +223,8 @@ Add these to your profile by going to each repository and clicking "Pin" in the 
 
 ### 🐍 **Snake Animation**
 
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/iampraveen6/iampraveen6/output/github-contribution-grid-snake-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/iampraveen6/iampraveen6/output/github-contribution-grid-snake.svg" />
-    <img alt="github-snake" src="https://raw.githubusercontent.com/iampraveen6/iampraveen6/output/github-contribution-grid-snake.svg" />
-  </picture>
-</p>
+https://raw.githubusercontent.com/iampraveen6/iampraveen6/refs/heads/output/github-contribution-grid-snake.svg
 ---
+
 
 ⭐️ From [iampraveen6](https://github.com/iampraveen6)
