@@ -16,17 +16,16 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # 1. Dynamically locate the Readme file regardless of case (README.md, Readme.md, readme.md)
+          # 1. Locate the Readme file regardless of case
           README_FILE=$(find . -maxdepth 1 -iname "readme.md" | head -n 1 | sed 's|./||')
           
           if [ -z "$README_FILE" ]; then
-            echo "Error: No readme.md file found in the root directory!"
+            echo "Error: No readme.md file found!"
             exit 1
           fi
-          echo "Found file: $README_FILE"
 
-          # 2. Fetch your 15 most recent public repositories
-          REPOS=$(curl -s -H "Authorization: token $GITHUB_TOKEN" "https://api.github.com/users/iampraveen6/repos?sort=created&direction=desc&per_page=15")
+          # 2. Fetch repos sorted by 'pushed' to capture your absolute latest activity, increasing per_page to 30
+          REPOS=$(curl -s -H "Authorization: token $GITHUB_TOKEN" "https://api.github.com/users/iampraveen6/repos?sort=pushed&direction=desc&per_page=30")
           
           # Initialize the markdown string
           LIST_CONTENT="## 📂 All Repositories & Updates\n\n_Automatically updating when a new project is created_\n\n"
@@ -42,9 +41,14 @@ jobs:
             
             NAME=$(echo "$repo" | jq -r '.name')
             URL=$(echo "$repo" | jq -r '.html_url')
-            DESC=$(echo "$repo" | jq -r '.description // "No description provided."')
-            LANG=$(echo "$repo" | jq -r '.language // ""')
+            DESC=$(echo "$repo" | jq -r '.description')
+            LANG=$(echo "$repo" | jq -r '.language')
             STARS=$(echo "$repo" | jq -r '.stargazers_count // 0')
+            
+            # Handle null or missing descriptions cleanly
+            if [ "$DESC" = "null" ] || [ -z "$DESC" ]; then
+              DESC="No description provided."
+            fi
             
             # Format language tag if present
             if [ "$LANG" != "null" ] && [ ! -z "$LANG" ]; then
@@ -67,11 +71,11 @@ jobs:
           # Write out the new list content to a temporary text file
           printf "$LIST_CONTENT" > new_list.txt
           
-          # Safely inject the list strictly inside the HTML tags at the bottom of the correctly found file
+          # Inject the list strictly inside the HTML tags
           awk '/<!-- REPO_LIST_START -->/{print;system("cat new_list.txt");so=1;next} /<!-- REPO_LIST_END -->/{so=0} !so' "$README_FILE" > temp_README.md && mv temp_README.md "$README_FILE"
           rm new_list.txt
 
-          # Export the exact filename so the next step knows what to commit
+          # Export filename for the commit step
           echo "README_FILENAME=$README_FILE" >> $GITHUB_ENV
 
       - name: Commit and Push Changes Safely
@@ -79,5 +83,6 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add "$README_FILENAME"
-          # Only commits and pushes if a brand new repository changes the list contents
-          git diff --quiet && git diff --staged --quiet || (git commit -m "🤖 Auto-updated portfolio: new repository found" && git push)
+          
+          # Force push if differences exist
+          git diff --quiet && git diff --staged --quiet || (git commit -m "🤖 Auto-updated portfolio: latest repository sync" && git push)
