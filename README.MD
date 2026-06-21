@@ -154,8 +154,9 @@ I'm passionate about **Site Reliability Engineering** and **DevOps**, focused on
 ### 💭 **Quotes I Live By**
 
 <p align="center">
-  <i>“I think one of the most valuable rules is avoid duplication.”</i> <br/>
-  <b>- Martin Fowler</b>
+  <a href="https://github.com/momeimtiaz/dev-quotes-readme">
+    <img src="https://dev-quotes-readme.vercel.app/api?theme=radical" alt="Dynamic Dev Quotes" />
+  </a>
 </p>
 
 ---
