@@ -228,6 +228,72 @@ Add these to your profile by going to each repository and clicking "Pin" in the 
 
 _Automatically updating when a new project is created_
 
+* **[iampraveen6](https://github.com/iampraveen6/iampraveen6)**
+  — No description provided.
+
+* **[GeminiGuard-Autonomous-Self-Healing-CI-CD-Agent](https://github.com/iampraveen6/GeminiGuard-Autonomous-Self-Healing-CI-CD-Agent)**
+  • `Python` — Autonomous CI/CD agent powered by Gemini 2.5 Pro — detects failures in logs, tests, Docker & UI screenshots, then auto-generates fixes with full cost transparency.
+
+* **[TraceOps](https://github.com/iampraveen6/TraceOps)**
+  — TraceOps is an end-to-end observability platform that integrates tracing, metrics, and logging for microservices using OpenTelemetry. It enables seamless monitoring and automated deployment through CI/CD pipelines and GitOps with ArgoCD.
+
+* **[SkillForge](https://github.com/iampraveen6/SkillForge)**
+  • `Python` — SkillForge is an intelligent study planner that generates personalized learning paths for technical subjects like Azure, Git, Python, and Power Apps. It creates weekly topics, daily schedules, and curates free resources including YouTube tutorials, documentation, and certification paths. Perfect for self-learners and professionals.
+
+* **[Task-Manager-Pro-with-Podman](https://github.com/iampraveen6/Task-Manager-Pro-with-Podman)**
+  • `JavaScript` — No description provided.
+
+* **[K8s-AutoHeal](https://github.com/iampraveen6/K8s-AutoHeal)**
+  • `HTML` — K8s-autoheal automatically detects and recovers unhealthy Kubernetes pods using intelligent health checking. No manual intervention required – your cluster heals itself.
+
+* **[PaperStack](https://github.com/iampraveen6/PaperStack)**
+  — PaperStack is an open-source online bookstore built with Java Servlets, JDBC, and MySQL. Clone it, re-skin the UI, add payments, and you have a fully functioning e-commerce site for physical or digital books. No Spring bloat—just plain Maven, Tomcat, and clean code you can actually read.
+
+* **[flask-eks-terraform-cicd](https://github.com/iampraveen6/flask-eks-terraform-cicd)**
+  • `HCL` — A cloud-native project demonstrating how to deploy a Flask application on AWS EKS (Kubernetes) using Terraform for infrastructure provisioning and a CI/CD pipeline for automated builds, tests, and deployments.
+
+* **[Terraform_Niginx](https://github.com/iampraveen6/Terraform_Niginx)**
+  • `Shell` — No description provided.
+
+* **[Multi-Service-Ecommerce](https://github.com/iampraveen6/Multi-Service-Ecommerce)**
+  • `JavaScript` — No description provided.
+
+* **[terraform-conditional-vpc-ec2](https://github.com/iampraveen6/terraform-conditional-vpc-ec2)**
+  • `HCL` — A Terraform module that conditionally provisions an AWS VPC and an optional EC2 instance within it, allowing you to dynamically create either just the network, just the compute, or a complete environment based on your input variables.
+
+* **[terraform-s3-project](https://github.com/iampraveen6/terraform-s3-project)**
+  • `HCL` — No description provided.
+
+* **[learnerReportCS](https://github.com/iampraveen6/learnerReportCS)**
+  • `JavaScript` — Helm Implementation
+
+* **[Helm-Assignment](https://github.com/iampraveen6/Helm-Assignment)**
+  — No description provided.
+
+* **[flask-hello-world](https://github.com/iampraveen6/flask-hello-world)**
+  • `Python` — No description provided.
+
+* **[flask-app-example](https://github.com/iampraveen6/flask-app-example)**
+  • `Python` — No description provided.
+
+* **[Serverless-Architecture-Cloud-Automation](https://github.com/iampraveen6/Serverless-Architecture-Cloud-Automation)**
+  • `Python` — No description provided.
+
+* **[praveencicd](https://github.com/iampraveen6/praveencicd)**
+  • `HTML` — No description provided.
+
+* **[web-server-backups](https://github.com/iampraveen6/web-server-backups)**
+  • `Shell` — No description provided.
+
+* **[system-monitoring-setup](https://github.com/iampraveen6/system-monitoring-setup)**
+  • `Shell` — No description provided.
+
+* **[python](https://github.com/iampraveen6/python)**
+  • `Python` — No description provided.
+
+* **[Sample-Onlinebookstore](https://github.com/iampraveen6/Sample-Onlinebookstore)**
+  • `HTML` — No description provided.
+
 <!-- REPO_LIST_END -->
 
 ---
