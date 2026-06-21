@@ -15,14 +15,11 @@
 
 ## 🚀 **About Me**
 
-I'm passionate about **Site Reliability Engineering** and **DevOps**, focused on building resilient and automated infrastructure.
+I'm passionate about **Site Reliability Engineering** and **DevOps**, focused on building resilient, automated infrastructure, and intelligent observability tools.
 
-- 🔭 Currently working on: **K8s-AutoHeal** - Self-healing Kubernetes operator
-- 🌱 Learning: **Kubernetes Operators**, **Prometheus**, **Grafana**
-- 👯 Looking to collaborate on: **SRE tools**, **Monitoring solutions**
-- 💬 Ask me about: **Kubernetes**, **Docker**, **AWS**, **Python**
+- 💬 Ask me about: **Kubernetes**, **Docker**, **AWS**, **Python automation**
 - 📫 Reach me: **iampraveen6@gmail.com**
-- ⚡ Fun fact: I love automating everything possible!
+- ⚡ Fun fact: I love automating everything possible to prevent duplication!
 
 ---
 
@@ -56,87 +53,28 @@ I'm passionate about **Site Reliability Engineering** and **DevOps**, focused on
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
   <img src="https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white" />
   <img src="https://img.shields.io/badge/Shell_Script-121011?style=for-the-badge&logo=gnu-bash&logoColor=white" />
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
 </p>
 
 ---
 
-## 📌 **Featured Projects**
+## 📌 **Top Repositories**
 
-<table>
-  <tr>
-    <td width="50%">
-      <h3 align="center">🔹 K8s-AutoHeal</h3>
-      <p align="center">
-        <img src="https://img.shields.io/badge/Go-00ADD8?style=flat&logo=go&logoColor=white" />
-        <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=flat&logo=kubernetes&logoColor=white" />
-      </p>
-      <p align="center">Self-healing Kubernetes operator that automatically detects and recovers unhealthy pods</p>
-      <p align="center">
-        <a href="https://github.com/iampraveen6/K8s-AutoHeal">View Repository →</a>
-      </p>
-    </td>
-    <td width="50%">
-      <h3 align="center">🔹 System-Monitoring-Setup</h3>
-      <p align="center">
-        <img src="https://img.shields.io/badge/Prometheus-E6522C?style=flat&logo=prometheus&logoColor=white" />
-        <img src="https://img.shields.io/badge/Grafana-F46800?style=flat&logo=grafana&logoColor=white" />
-        <img src="https://img.shields.io/badge/Shell-4EAA25?style=flat&logo=gnu-bash&logoColor=white" />
-      </p>
-      <p align="center">Complete monitoring stack with Prometheus, Grafana, and AlertManager</p>
-      <p align="center">
-        <a href="https://github.com/iampraveen6/system-monitoring-setup">View Repository →</a>
-      </p>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%">
-      <h3 align="center">🔹 Python Projects</h3>
-      <p align="center">
-        <img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white" />
-      </p>
-      <p align="center">Collection of Python automation scripts and learning projects</p>
-      <p align="center">
-        <a href="https://github.com/iampraveen6/python">View Repository →</a>
-      </p>
-    </td>
-    <td width="50%">
-      <h3 align="center">🔹 Microservices-Task</h3>
-      <p align="center">
-        <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black" />
-        <img src="https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white" />
-      </p>
-      <p align="center">Microservices demonstration with Docker containerization</p>
-      <p align="center">
-        <a href="https://github.com/iampraveen6/Microservices-Task">View Repository →</a>
-      </p>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%">
-      <h3 align="center">🔹 Web-Server-Backups</h3>
-      <p align="center">
-        <img src="https://img.shields.io/badge/Shell-4EAA25?style=flat&logo=gnu-bash&logoColor=white" />
-      </p>
-      <p align="center">Automated backup solutions with rotation and monitoring</p>
-      <p align="center">
-        <a href="https://github.com/iampraveen6/web-server-backups">View Repository →</a>
-      </p>
-    </td>
-    <td width="50%">
-      <h3 align="center">🔹 Sample-Onlinebookstore</h3>
-      <p align="center">
-        <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white" />
-        <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white" />
-      </p>
-      <p align="center">Sample bookstore application frontend</p>
-      <p align="center">
-        <a href="https://github.com/iampraveen6/Sample-Onlinebookstore">View Repository →</a>
-      </p>
-    </td>
-  </tr>
-</table>
+<p align="center">
+  <a href="https://github.com/iampraveen6/GeminiGuard-Autonomous-Self-Healing-CI-CD-Agent">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=iampraveen6&repo=GeminiGuard-Autonomous-Self-Healing-CI-CD-Agent&theme=radical&hide_border=true" width="48%" />
+  </a>
+  <a href="https://github.com/iampraveen6/TraceOps">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=iampraveen6&repo=TraceOps&theme=radical&hide_border=true" width="48%" />
+  </a>
+</p>
+<p align="center">
+  <a href="https://github.com/iampraveen6/K8s-AutoHeal">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=iampraveen6&repo=K8s-AutoHeal&theme=radical&hide_border=true" width="48%" />
+  </a>
+  <a href="https://github.com/iampraveen6/SkillForge">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=iampraveen6&repo=SkillForge&theme=radical&hide_border=true" width="48%" />
+  </a>
+</p>
 
 ---
 
@@ -156,75 +94,4 @@ I'm passionate about **Site Reliability Engineering** and **DevOps**, focused on
 ## 📈 **Contribution Graph**
 
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=iampraveen6&theme=react-dark&hide_border=true&area=true" width="95%" />
-</p>
-
----
-
-## 🏆 **GitHub Trophies**
-
-<p align="center">
-  <a href="https://github.com/ryo-ma/github-profile-trophy">
-    <img src="https://github-profile-trophy.vercel.app/?username=iampraveen6&theme=radical&no-frame=false&margin-w=4&row=2&column=4" alt="github trophies" />
-  </a>
-</p>
-
----
-
-## 🤝 **Connect With Me**
-
-<p align="center">
-  <a href="https://www.linkedin.com/in/praveenakittur/">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
-  </a>
-  <a href="mailto:iampraveen6@gmail.com">
-    <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
-  </a>
-  <a href="https://github.com/iampraveen6">
-    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github-actions&logoColor=white" />
-  </a>
-</p>
-
----
-
-### 💭 **Quotes I Live By**
-
-<p align="center">
-  <i>“I think one of the most valuable rules is avoid duplication.”</i> <br/>
-  <b>- Martin Fowler</b>
-</p>
-
----
-
-### 🐍 **Snake Animation**
-
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/iampraveen6/iampraveen6/output/github-contribution-grid-snake-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/iampraveen6/iampraveen6/output/github-contribution-grid-snake.svg" />
-    <img alt="github-snake" src="https://raw.githubusercontent.com/iampraveen6/iampraveen6/output/github-contribution-grid-snake.svg" />
-  </picture>
-</p>
-
----
-
-<!-- REPO_LIST_START -->
-## 📂 Latest Repositories
-
-* **[GeminiGuard-Autonomous-Self-Healing-CI-CD-Agent](https://github.com/iampraveen6/GeminiGuard-Autonomous-Self-Healing-CI-CD-Agent)**
-  • `Python` — Autonomous CI/CD agent powered by Gemini 2.5 Pro — detects failures in logs, tests, Docker & UI screenshots, then auto-generates fixes with full cost transparency.
-
-* **[TraceOps](https://github.com/iampraveen6/TraceOps)**
-  — TraceOps is an end-to-end observability platform that integrates tracing, metrics, and logging for microservices using OpenTelemetry. It enables seamless monitoring and automated deployment through CI/CD pipelines and GitOps with ArgoCD.
-
-* **[SkillForge](https://github.com/iampraveen6/SkillForge)**
-  • `Python` — SkillForge is an intelligent study planner that generates personalized learning paths for technical subjects like Azure, Git, Python, and Power Apps.
-
-* **[Task-Manager-Pro-with-Podman](https://github.com/iampraveen6/Task-Manager-Pro-with-Podman)**
-  • `JavaScript` — No description provided.
-
-* **[K8s-AutoHeal](https://github.com/iampraveen6/K8s-AutoHeal)**
-  • `HTML` — K8s-autoheal automatically detects and recovers unhealthy Kubernetes pods using intelligent health checking.
-<!-- REPO_LIST_END -->
-
-⭐️ From [iampraveen6](https://github.com/iampraveen6)
+  <img src="https://github-readme
