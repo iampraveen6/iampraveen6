@@ -2,7 +2,7 @@ name: Auto-Update Portfolio Repositories
 
 on:
   schedule:
-    - cron: '0 */12 * * *' # Automatically checks every 12 hours
+    - cron: '0 */12 * * *'
   workflow_dispatch: # Allows manual trigger
 
 jobs:
@@ -11,33 +11,40 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Fetch and Format Repositories
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # 1. Locate the Readme file regardless of case
-          README_FILE=$(find . -maxdepth 1 -iname "readme.md" | head -n 1 | sed 's|./||')
-          
-          if [ -z "$README_FILE" ]; then
-            echo "Error: No readme.md file found!"
-            exit 1
+          # 1. Look specifically for your main profile README file
+          TARGET_FILE="README.md"
+          if [ ! -f "$TARGET_FILE" ]; then
+            # If lowercase, capture it
+            TARGET_FILE=$(find . -maxdepth 1 -iname "readme.md" | head -n 1 | sed 's|./||')
           fi
-
-          # 2. Fetch repos sorted by 'pushed' to capture your absolute latest activity, increasing per_page to 30
-          REPOS=$(curl -s -H "Authorization: token $GITHUB_TOKEN" "https://api.github.com/users/iampraveen6/repos?sort=pushed&direction=desc&per_page=30")
           
+          echo "Target profile file identified as: $TARGET_FILE"
+
+          # 2. Query GitHub API for your account's public repositories
+          echo "Querying GitHub API for iampraveen6..."
+          REPOS=$(curl -s "https://api.github.com/users/iampraveen6/repos?sort=pushed&per_page=50")
+          
+          # Debugging: Print out names of all repositories found by the runner
+          echo "--- REPOSITORIES DETECTED BY RUNNER ---"
+          echo "$REPOS" | jq -r '.[] | .name'
+          echo "---------------------------------------"
+
           # Initialize the markdown string
           LIST_CONTENT="## 📂 All Repositories & Updates\n\n_Automatically updating when a new project is created_\n\n"
           
-          # Process the JSON data using jq
-          echo "$REPOS" | jq -c '.[]' | while read -r repo; do
+          # 3. Parse JSON array
+          while read -r repo; do
+            if [ -z "$repo" ]; then continue; fi
+            
             IS_FORK=$(echo "$repo" | jq -r '.fork')
             
-            # Skip the repository if it's a fork
-            if [ "$IS_FORK" = "true" ]; then
-              continue
-            fi
+            # Skip fork repos
+            if [ "$IS_FORK" = "true" ]; then continue; fi
             
             NAME=$(echo "$repo" | jq -r '.name')
             URL=$(echo "$repo" | jq -r '.html_url')
@@ -45,44 +52,45 @@ jobs:
             LANG=$(echo "$repo" | jq -r '.language')
             STARS=$(echo "$repo" | jq -r '.stargazers_count // 0')
             
-            # Handle null or missing descriptions cleanly
             if [ "$DESC" = "null" ] || [ -z "$DESC" ]; then
               DESC="No description provided."
             fi
             
-            # Format language tag if present
             if [ "$LANG" != "null" ] && [ ! -z "$LANG" ]; then
               LANG_TAG="• \`$LANG\` "
             else
               LANG_TAG=""
             fi
             
-            # Include stars if the repo has received any
             if [ "$STARS" -gt 0 ]; then
               STAR_TAG="⭐ $STARS "
             else
               STAR_TAG=""
             fi
             
-            # Append cleanly formatted row
             LIST_CONTENT="$LIST_CONTENT* **[$NAME]($URL)**\n  ${LANG_TAG}${STAR_TAG}— $DESC\n\n"
-          done
+          done < <(echo "$REPOS" | jq -c '.[]')
 
-          # Write out the new list content to a temporary text file
+          # Write to a clean temp file
           printf "$LIST_CONTENT" > new_list.txt
           
-          # Inject the list strictly inside the HTML tags
-          awk '/<!-- REPO_LIST_START -->/{print;system("cat new_list.txt");so=1;next} /<!-- REPO_LIST_END -->/{so=0} !so' "$README_FILE" > temp_README.md && mv temp_README.md "$README_FILE"
+          # 4. Swap file contents inside the anchors
+          awk '/<!-- REPO_LIST_START -->/{print;system("cat new_list.txt");so=1;next} /<!-- REPO_LIST_END -->/{so=0} !so' "$TARGET_FILE" > temp_README.md && mv temp_README.md "$TARGET_FILE"
           rm new_list.txt
-
-          # Export filename for the commit step
-          echo "README_FILENAME=$README_FILE" >> $GITHUB_ENV
+          
+          echo "TARGET_FILENAME=$TARGET_FILE" >> $GITHUB_ENV
 
       - name: Commit and Push Changes Safely
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add "$README_FILENAME"
+          git add "$TARGET_FILENAME"
           
-          # Force push if differences exist
-          git diff --quiet && git diff --staged --quiet || (git commit -m "🤖 Auto-updated portfolio: latest repository sync" && git push)
+          # Check changes explicitly
+          if ! git diff --cached --quiet; then
+            echo "Changes detected. Committing to repository..."
+            git commit -m "🤖 Auto-updated portfolio: sync latest projects"
+            git push origin HEAD
+          else
+            echo "No profile changes detected. Readme up to date."
+          fi
