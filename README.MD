@@ -224,6 +224,10 @@ Add these to your profile by going to each repository and clicking "Pin" in the 
 
 ---
 <!-- REPO_LIST_START -->
+## 📂 All Repositories & Updates
+
+_Automatically updating when a new project is created_
+
 <!-- REPO_LIST_END -->
 
 ---
