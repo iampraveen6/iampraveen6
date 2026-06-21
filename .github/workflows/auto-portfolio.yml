@@ -3,7 +3,7 @@ name: Auto-Update Portfolio Repositories
 on:
   schedule:
     - cron: '0 */12 * * *'
-  workflow_dispatch: # Allows manual trigger
+  workflow_dispatch:
 
 jobs:
   update-portfolio:
@@ -13,34 +13,21 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Fetch and Format Repositories
+        id: repo_builder
         run: |
-          TARGET_FILE="README.md"
-          if [ ! -f "$TARGET_FILE" ]; then
-            TARGET_FILE=$(find . -maxdepth 1 -iname "readme.md" | head -n 1 | sed 's|./||')
-          fi
+          # Fetch public repos sorted by active push activity
+          REPOS=$(curl -s "https://api.github.com/users/iampraveen6/repos?sort=pushed&per_page=40")
           
-          echo "Target profile file identified as: $TARGET_FILE"
-
-          # Query using standard public endpoint (bypasses local runner token scope restrictions)
-          echo "Querying public GitHub API for iampraveen6..."
-          REPOS=$(curl -s "https://api.github.com/users/iampraveen6/repos?sort=pushed&per_page=60")
-
-          # Initialize the markdown string
+          # Start formatting the markup list string
           LIST_CONTENT="## 📂 All Repositories & Updates\n\n_Automatically updating when a new project is created_\n\n"
           
-          # Parse JSON array directly using a standard while-loop counter
-          COUNT=0
           while read -r repo; do
             if [ -z "$repo" ] || [ "$repo" = "null" ]; then continue; fi
             
             IS_FORK=$(echo "$repo" | jq -r '.fork')
-            
-            # Skip fork repos
             if [ "$IS_FORK" = "true" ]; then continue; fi
             
             NAME=$(echo "$repo" | jq -r '.name')
-            
-            # Skip the profile repository itself so it doesn't list itself inside the portfolio
             if [ "$NAME" = "iampraveen6" ]; then continue; fi
             
             URL=$(echo "$repo" | jq -r '.html_url')
@@ -48,47 +35,48 @@ jobs:
             LANG=$(echo "$repo" | jq -r '.language')
             STARS=$(echo "$repo" | jq -r '.stargazers_count // 0')
             
-            if [ "$DESC" = "null" ] || [ -z "$DESC" ]; then
-              DESC="No description provided."
-            fi
+            if [ "$DESC" = "null" ] || [ -z "$DESC" ]; then DESC="No description provided."; fi
+            if [ "$LANG" != "null" ] && [ ! -z "$LANG" ]; then LANG_TAG="• \`$LANG\` "; else LANG_TAG=""; fi
+            if [ "$STARS" -gt 0 ]; then STAR_TAG="⭐ $STARS "; else STAR_TAG=""; fi
             
-            if [ "$LANG" != "null" ] && [ ! -z "$LANG" ]; then
-              LANG_TAG="• \`$LANG\` "
-            else
-              LANG_TAG=""
-            fi
-            
-            if [ "$STARS" -gt 0 ]; then
-              STAR_TAG="⭐ $STARS "
-            else
-              STAR_TAG=""
-            fi
-            
-            LIST_CONTENT="$LIST_CONTENT* **[$NAME]($URL)**\n  ${LANG_TAG}${STAR_TAG}— $DESC\n\n"
-            COUNT=$((COUNT+1))
+            LIST_CONTENT="${LIST_CONTENT}* **[$NAME]($URL)**\n  ${LANG_TAG}${STAR_TAG}— ${DESC}\n\n"
           done < <(echo "$REPOS" | jq -c '.[]')
 
-          echo "Total original repositories formatted: $COUNT"
+          # Use a clean file instead of inline string replacement to avoid regex duplication loops
+          printf "$LIST_CONTENT" > repo_list_output.txt
 
-          # Write out content to temp file
-          printf "$LIST_CONTENT" > new_list.txt
+      - name: Clean Inject Portfolio Stream
+        uses: jasonetco/create-an-issue@v2
+        id: injector
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Locate file case insensitively
+          TARGET_FILE=$(find . -maxdepth 1 -iname "readme.md" | head -n 1 | sed 's|./||')
           
-          # Swap file contents inside anchors
-          awk '//{print;system("cat new_list.txt");so=1;next} //{so=0} !so' "$TARGET_FILE" > temp_README.md && mv temp_README.md "$TARGET_FILE"
-          rm new_list.txt
+          # Read file up to start tag
+          sed -n '1,//p' "$TARGET_FILE" > temp_readme.md
           
-          echo "TARGET_FILENAME=$TARGET_FILE" >> $GITHUB_ENV
+          # Append the brand new generated list text file
+          cat repo_list_output.txt >> temp_readme.md
+          
+          # Append everything from the end tag to the bottom of the original file
+          sed -n '//,$p' "$TARGET_FILE" >> temp_readme.md
+          
+          # Overwrite original target file securely
+          mv temp_readme.md "$TARGET_FILE"
+          rm repo_list_output.txt
+          echo "FINAL_FILE_PATH=$TARGET_FILE" >> $GITHUB_ENV
 
       - name: Commit and Push Changes Safely
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add "$TARGET_FILENAME"
+          git add "$FINAL_FILE_PATH"
           
           if ! git diff --cached --quiet; then
-            echo "Changes detected. Committing to repository..."
-            git commit -m "🤖 Auto-updated portfolio: sync latest projects"
+            git commit -m "🤖 Auto-updated portfolio: removed duplication & synced repos"
             git push origin HEAD
           else
-            echo "No profile changes detected. Readme up to date."
+            echo "No profile updates needed."
           fi
