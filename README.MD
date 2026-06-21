@@ -151,16 +151,6 @@ I'm passionate about **Site Reliability Engineering** and **DevOps**, focused on
 
 ---
 
-### 💭 **Quotes I Live By**
-
-<p align="center">
-  <a href="https://github.com/0x192/readme-quotes">
-    <img src="https://readme-quotes.vercel.app/api?theme=radical" alt="Dynamic Tech Quotes" />
-  </a>
-</p>
-
----
-
 ### 🐍 **Snake Animation**
 
 <p align="center">
