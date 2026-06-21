@@ -154,8 +154,8 @@ I'm passionate about **Site Reliability Engineering** and **DevOps**, focused on
 ### 💭 **Quotes I Live By**
 
 <p align="center">
-  <a href="https://github.com/momeimtiaz/dev-quotes-readme">
-    <img src="https://dev-quotes-readme.vercel.app/api?theme=radical" alt="Dynamic Dev Quotes" />
+  <a href="https://github.com/0x192/readme-quotes">
+    <img src="https://readme-quotes.vercel.app/api?theme=radical" alt="Dynamic Tech Quotes" />
   </a>
 </p>
 
