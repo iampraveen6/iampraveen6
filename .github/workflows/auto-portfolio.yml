@@ -11,35 +11,27 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Fetch and Format Repositories
         run: |
-          # 1. Look specifically for your main profile README file
           TARGET_FILE="README.md"
           if [ ! -f "$TARGET_FILE" ]; then
-            # If lowercase, capture it
             TARGET_FILE=$(find . -maxdepth 1 -iname "readme.md" | head -n 1 | sed 's|./||')
           fi
           
           echo "Target profile file identified as: $TARGET_FILE"
 
-          # 2. Query GitHub API for your account's public repositories
-          echo "Querying GitHub API for iampraveen6..."
-          REPOS=$(curl -s "https://api.github.com/users/iampraveen6/repos?sort=pushed&per_page=50")
-          
-          # Debugging: Print out names of all repositories found by the runner
-          echo "--- REPOSITORIES DETECTED BY RUNNER ---"
-          echo "$REPOS" | jq -r '.[] | .name'
-          echo "---------------------------------------"
+          # Query using standard public endpoint (bypasses local runner token scope restrictions)
+          echo "Querying public GitHub API for iampraveen6..."
+          REPOS=$(curl -s "https://api.github.com/users/iampraveen6/repos?sort=pushed&per_page=60")
 
           # Initialize the markdown string
           LIST_CONTENT="## 📂 All Repositories & Updates\n\n_Automatically updating when a new project is created_\n\n"
           
-          # 3. Parse JSON array
+          # Parse JSON array directly using a standard while-loop counter
+          COUNT=0
           while read -r repo; do
-            if [ -z "$repo" ]; then continue; fi
+            if [ -z "$repo" ] || [ "$repo" = "null" ]; then continue; fi
             
             IS_FORK=$(echo "$repo" | jq -r '.fork')
             
@@ -47,6 +39,10 @@ jobs:
             if [ "$IS_FORK" = "true" ]; then continue; fi
             
             NAME=$(echo "$repo" | jq -r '.name')
+            
+            # Skip the profile repository itself so it doesn't list itself inside the portfolio
+            if [ "$NAME" = "iampraveen6" ]; then continue; fi
+            
             URL=$(echo "$repo" | jq -r '.html_url')
             DESC=$(echo "$repo" | jq -r '.description')
             LANG=$(echo "$repo" | jq -r '.language')
@@ -69,13 +65,16 @@ jobs:
             fi
             
             LIST_CONTENT="$LIST_CONTENT* **[$NAME]($URL)**\n  ${LANG_TAG}${STAR_TAG}— $DESC\n\n"
+            COUNT=$((COUNT+1))
           done < <(echo "$REPOS" | jq -c '.[]')
 
-          # Write to a clean temp file
+          echo "Total original repositories formatted: $COUNT"
+
+          # Write out content to temp file
           printf "$LIST_CONTENT" > new_list.txt
           
-          # 4. Swap file contents inside the anchors
-          awk '/<!-- REPO_LIST_START -->/{print;system("cat new_list.txt");so=1;next} /<!-- REPO_LIST_END -->/{so=0} !so' "$TARGET_FILE" > temp_README.md && mv temp_README.md "$TARGET_FILE"
+          # Swap file contents inside anchors
+          awk '//{print;system("cat new_list.txt");so=1;next} //{so=0} !so' "$TARGET_FILE" > temp_README.md && mv temp_README.md "$TARGET_FILE"
           rm new_list.txt
           
           echo "TARGET_FILENAME=$TARGET_FILE" >> $GITHUB_ENV
@@ -86,7 +85,6 @@ jobs:
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add "$TARGET_FILENAME"
           
-          # Check changes explicitly
           if ! git diff --cached --quiet; then
             echo "Changes detected. Committing to repository..."
             git commit -m "🤖 Auto-updated portfolio: sync latest projects"
