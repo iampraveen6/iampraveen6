@@ -1,0 +1,71 @@
+name: Auto-Update Portfolio Repositories
+
+on:
+  schedule:
+    - cron: '0 */12 * * *' # Automatically checks every 12 hours
+  workflow_dispatch: # Allows you to manually trigger it instantly to test it
+
+jobs:
+  update-portfolio:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Fetch and Format Repositories
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Fetch your 15 most recent public repositories
+          REPOS=$(curl -s -H "Authorization: token $GITHUB_TOKEN" "https://api.github.com/users/iampraveen6/repos?sort=created&direction=desc&per_page=15")
+          
+          # Initialize the markdown string
+          LIST_CONTENT="## 📂 All Repositories & Updates\n\n_Automatically updating when a new project is created_\n\n"
+          
+          # Process the JSON data using jq
+          echo "$REPOS" | jq -c '.[]' | while read -r repo; do
+            IS_FORK=$(echo "$repo" | jq -r '.fork')
+            
+            # Skip the repository if it's a fork
+            if [ "$IS_FORK" = "true" ]; then
+              continue
+            fi
+            
+            NAME=$(echo "$repo" | jq -r '.name')
+            URL=$(echo "$repo" | jq -r '.html_url')
+            DESC=$(echo "$repo" | jq -r '.description // "No description provided."')
+            LANG=$(echo "$repo" | jq -r '.language // ""')
+            STARS=$(echo "$repo" | jq -r '.stargazers_count // 0')
+            
+            # Format language tag if present
+            if [ "$LANG" != "null" ] && [ ! -z "$LANG" ]; then
+              LANG_TAG="• \`$LANG\` "
+            else
+              LANG_TAG=""
+            fi
+            
+            # Include stars if the repo has received any
+            if [ "$STARS" -gt 0 ]; then
+              STAR_TAG="⭐ $STARS "
+            else
+              STAR_TAG=""
+            fi
+            
+            # Append cleanly formatted row
+            LIST_CONTENT="$LIST_CONTENT* **[$NAME]($URL)**\n  ${LANG_TAG}${STAR_TAG}— $DESC\n\n"
+          done
+
+          # Write out the new list content to a temporary text file
+          printf "$LIST_CONTENT" > new_list.txt
+          
+          # Safely inject the list strictly inside the HTML tags at the bottom
+          awk '/<!-- REPO_LIST_START -->/{print;system("cat new_list.txt");so=1;next} /<!-- REPO_LIST_END -->/{so=0} !so' README.md > temp_README.md && mv temp_README.md README.md
+          rm new_list.txt
+
+      - name: Commit and Push Changes Safely
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add README.md
+          # Only commits and pushes if a brand new repository changes the list contents
+          git diff --quiet && git diff --staged --quiet || (git commit -m "🤖 Auto-updated portfolio: new repository found" && git push)
