@@ -44,7 +44,6 @@ I design and operate reliable, scalable, and secure cloud platforms. I specializ
 | [Flask EKS CI/CD](https://github.com/iampraveen6/flask-eks-terraform-cicd) | AWS EKS deployment pipeline using Terraform, Jenkins, Docker, and Kubernetes. | [repo](https://github.com/iampraveen6/flask-eks-terraform-cicd) |
 | [GeminiGuard](https://github.com/iampraveen6/GeminiGuard-Autonomous-Self-Healing-CI-CD-Agent) | AI-assisted CI/CD failure detection and remediation. | [repo](https://github.com/iampraveen6/GeminiGuard-Autonomous-Self-Healing-CI-CD-Agent) |
 | [Serverless Cloud Automation](https://github.com/iampraveen6/Serverless-Architecture-Cloud-Automation) | AWS Lambda automation for operational tasks (EC2, S3, tagging, sentiment analysis). | [repo](https://github.com/iampraveen6/Serverless-Architecture-Cloud-Automation) |
-| [Task Manager Pro](https://github.com/iampraveen6/Task-Manager-Pro-with-Podman) | Containerized Node.js app with Podman and Docker Compose. | [repo](https://github.com/iampraveen6/Task-Manager-Pro-with-Podman) |
 
 ## GitHub statistics
 
