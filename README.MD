@@ -39,12 +39,11 @@ I design and operate reliable, scalable, and secure cloud platforms. I specializ
 
 | Project | What it demonstrates | Link |
 |---|---|---|
-| [CloudForge](https://github.com/iampraveen6/Cloudforge) | Azure Internal Developer Platform (IDP) with Terraform, Kubernetes, and CI/CD. | [repo](https://github.com/iampraveen6/Cloudforge) |
-| [TraceOps](https://github.com/iampraveen6/TraceOps) | End-to-end observability with OpenTelemetry, Helm, Prometheus, Grafana, and ArgoCD. | [repo](https://github.com/iampraveen6/TraceOps) |
-| [Flask EKS CI/CD](https://github.com/iampraveen6/flask-eks-terraform-cicd) | AWS EKS deployment pipeline using Terraform, Jenkins, Docker, and Kubernetes. | [repo](https://github.com/iampraveen6/flask-eks-terraform-cicd) |
-| [GeminiGuard](https://github.com/iampraveen6/GeminiGuard-Autonomous-Self-Healing-CI-CD-Agent) | AI-assisted CI/CD failure detection and remediation. | [repo](https://github.com/iampraveen6/GeminiGuard-Autonomous-Self-Healing-CI-CD-Agent) |
-| [Serverless Cloud Automation](https://github.com/iampraveen6/Serverless-Architecture-Cloud-Automation) | AWS Lambda automation for operational tasks (EC2, S3, tagging, sentiment analysis). | [repo](https://github.com/iampraveen6/Serverless-Architecture-Cloud-Automation) |
-| [Task Manager Pro](https://github.com/iampraveen6/Task-Manager-Pro-with-Podman) | Containerized Node.js app with Podman and Docker Compose. | [repo](https://github.com/iampraveen6/Task-Manager-Pro-with-Podman) |
+| [CloudForge](https://github.com/iampraveen6/Cloudforge) | Built a self-service Azure IDP, enabling developers to provision secure, production-ready environments in minutes. | [repo](https://github.com/iampraveen6/Cloudforge) |
+| [TraceOps](https://github.com/iampraveen6/TraceOps) | Engineered a full observability stack to provide deep system visibility, reducing MTTR for critical incidents. | [repo](https://github.com/iampraveen6/TraceOps) |
+| [Flask EKS CI/CD](https://github.com/iampraveen6/flask-eks-terraform-cicd) | Automated the deployment of a Python application to AWS EKS, achieving zero-downtime releases via a GitOps workflow. | [repo](https://github.com/iampraveen6/flask-eks-terraform-cicd) |
+| [GeminiGuard](https://github.com/iampraveen6/GeminiGuard-Autonomous-Self-Healing-CI-CD-Agent) | Developed an autonomous CI/CD agent that uses AI to detect and fix build failures, improving pipeline reliability. | [repo](https://github.com/iampraveen6/GeminiGuard-Autonomous-Self-Healing-CI-CD-Agent) |
+| [Serverless Cloud Automation](https://github.com/iampraveen6/Serverless-Architecture-Cloud-Automation) | Created serverless functions to automate cloud operations, reducing manual toil for tasks like resource management and compliance. | [repo](https://github.com/iampraveen6/Serverless-Architecture-Cloud-Automation) |
 
 ## GitHub statistics
 
