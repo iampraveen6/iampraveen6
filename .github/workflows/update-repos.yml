@@ -1,5 +1,9 @@
 name: Update Recent Repositories
 
+concurrency:
+  group: update-repos
+  cancel-in-progress: true
+
 on:
   schedule:
     # Run every 3 hours so new public repos appear in your profile quickly
@@ -20,6 +24,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
