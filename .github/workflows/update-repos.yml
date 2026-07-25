@@ -42,8 +42,9 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          # Add whichever README variant exists and was modified
-          git add README.md README.MD 2>/dev/null || true
+          # Add whichever README variant exists and was modified (run separately so one missing file doesn't block the other)
+          git add README.md 2>/dev/null || true
+          git add README.MD 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No changes detected. Skipping commit."
           else
