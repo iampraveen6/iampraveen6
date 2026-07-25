@@ -55,8 +55,23 @@ I design and operate reliable, scalable, and secure cloud platforms. I specializ
 <p align="center"><em>Auto-synced from public repos (sorted by last push). New repos appear here automatically.</em></p>
 
 <!-- START AUTO-REPOS -->
-<!-- AUTO-GENERATED SECTION: Do not edit between these markers. Updated by .github/workflows/update-repos.yml -->
-<!-- Populated automatically with your latest public repos (sorted by last push). -->
+| Repository | Description | ⭐ | Last Push |
+|------------|-------------|---|-----------|
+| [PulseOps](https://github.com/iampraveen6/PulseOps) | PulseOps is a cloud-native SRE observability platform built on Kubernete... | 0 | 2026-07-25 |
+| [Serverless-Architecture-Cloud-Automation](https://github.com/iampraveen6/Serverless-Architecture-Cloud-Automation) | — | 0 | 2026-07-10 |
+| [GeminiGuard-Autonomous-Self-Healing-CI-CD-Agent](https://github.com/iampraveen6/GeminiGuard-Autonomous-Self-Healing-CI-CD-Agent) | Autonomous CI/CD agent powered by Gemini 2.5 Pro — detects failures in l... | 0 | 2026-07-10 |
+| [flask-eks-terraform-cicd](https://github.com/iampraveen6/flask-eks-terraform-cicd) | A cloud-native project demonstrating how to deploy a Flask application o... | 0 | 2026-07-10 |
+| [TraceOps](https://github.com/iampraveen6/TraceOps) | TraceOps is an end-to-end observability platform that integrates tracing... | 0 | 2026-07-10 |
+| [Cloudforge](https://github.com/iampraveen6/Cloudforge) | CloudForge is an Azure-powered Internal Developer Platform (IDP) that en... | 0 | 2026-07-10 |
+| [terraform-conditional-vpc-ec2](https://github.com/iampraveen6/terraform-conditional-vpc-ec2) | A Terraform module that conditionally provisions an AWS VPC and an optio... | 0 | 2025-08-29 |
+| [terraform-s3-project](https://github.com/iampraveen6/terraform-s3-project) | — | 0 | 2025-08-24 |
+| [flask-app-example](https://github.com/iampraveen6/flask-app-example) | — | 0 | 2025-07-13 |
+| [praveencicd](https://github.com/iampraveen6/praveencicd) | — | 0 | 2025-06-22 |
+| [web-server-backups](https://github.com/iampraveen6/web-server-backups) | — | 0 | 2025-05-25 |
+| [system-monitoring-setup](https://github.com/iampraveen6/system-monitoring-setup) | — | 0 | 2025-05-25 |
+| [python](https://github.com/iampraveen6/python) | — | 0 | 2025-05-08 |
+
+_Last updated: 2026-07-25 12:15 UTC_
 <!-- END AUTO-REPOS -->
 
 ## 📊 GitHub Statistics
