@@ -1,0 +1,46 @@
+name: Update Recent Repositories
+
+on:
+  schedule:
+    # Run every 3 hours so new public repos appear in your profile quickly
+    - cron: '0 */3 * * *'
+  workflow_dispatch:
+  # Also re-sync when the profile repo itself is updated (except README changes from this job)
+  push:
+    branches: [Main]
+    paths-ignore:
+      - 'README.md'
+      - 'README.MD'
+
+jobs:
+  update-repos:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Update README with recent public repos
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python3 scripts/update_repos.py
+
+      - name: Commit and push changes if any
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          # Add whichever README variant exists and was modified
+          git add README.md README.MD 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No changes detected. Skipping commit."
+          else
+            git commit -m "chore: auto-update recent repositories table"
+            git push
+          fi
