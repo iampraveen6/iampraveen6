@@ -42,5 +42,7 @@ jobs:
             echo "No changes detected. Skipping commit."
           else
             git commit -m "chore: auto-update recent repositories table"
+            # Rebase onto latest remote to avoid push rejection from concurrent updates
+            git pull --rebase
             git push
           fi
