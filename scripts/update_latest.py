@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-Auto-update the '🆕 Latest:' callout in README.md to the most recently pushed public repo.
+Auto-update the '🆕 Latest:' callout and the Featured Projects 'New/✨' marker
+in README.md to the most recently pushed public repo.
 Designed to run from GitHub Actions on a schedule or manually.
 """
 
@@ -88,13 +89,97 @@ def update_readme(repo):
     return True
 
 
+def update_featured_table(repo):
+    """Move the latest repo to the top of the Featured Projects table and mark it with ✨ / New."""
+    name = repo["name"]
+    readme_path = None
+    for cand in README_CANDIDATES:
+        if os.path.exists(cand):
+            readme_path = cand
+            break
+    if not readme_path:
+        print("No README.md or README.MD found", file=sys.stderr)
+        sys.exit(1)
+
+    with open(readme_path, "r", encoding="utf-8") as f:
+        content = f.read()
+
+    lines = content.split("\n")
+    try:
+        header_idx = lines.index("| Project | What it demonstrates | Link |")
+    except ValueError:
+        print("Featured Projects table header not found", file=sys.stderr)
+        return False
+
+    sep_idx = header_idx + 1
+    end_idx = sep_idx + 1
+    while end_idx < len(lines) and lines[end_idx].startswith("|"):
+        end_idx += 1
+
+    header = lines[header_idx:sep_idx + 1]
+    rows = lines[sep_idx + 1:end_idx]
+    after = lines[end_idx:]
+
+    parsed = []
+    for r in rows:
+        parts = [p.strip() for p in r.split("|")]
+        if len(parts) < 5:
+            parsed.append((r, None))
+        else:
+            parsed.append((r, parts[1:4]))
+
+    target_idx = None
+    for i, (raw, cols) in enumerate(parsed):
+        if cols is None:
+            continue
+        proj = cols[0]
+        desc = cols[1]
+        if proj.endswith(" ✨"):
+            proj = proj[:-2].rstrip()
+        if desc.startswith("**New —** "):
+            desc = desc[len("**New —** "):]
+        cols[0] = proj
+        cols[1] = desc
+        if proj.startswith(f"[{name}]"):
+            target_idx = i
+
+    if target_idx is None:
+        print(f"Latest repo {name} not found in Featured Projects table", file=sys.stderr)
+        return False
+
+    cols = parsed[target_idx][1]
+    new_proj = cols[0] + " ✨"
+    new_desc = "**New —** " + cols[1]
+    if cols[0] == new_proj and target_idx == 0:
+        return False
+
+    cols[0] = new_proj
+    cols[1] = new_desc
+    item = parsed.pop(target_idx)
+    parsed.insert(0, item)
+
+    new_rows = []
+    for raw, cols in parsed:
+        if cols is None:
+            new_rows.append(raw)
+        else:
+            new_rows.append("| " + " | ".join(cols) + " |")
+
+    new_content = "\n".join(lines[:header_idx] + header + new_rows + after)
+    with open(readme_path, "w", encoding="utf-8") as f:
+        f.write(new_content)
+    print(f"Updated {readme_path}: moved {name} to top of Featured Projects table")
+    return True
+
+
 def main():
     repo = get_latest_repo()
     if not repo:
         print("No public repos found", file=sys.stderr)
         sys.exit(1)
-    changed = update_readme(repo)
-    sys.exit(0 if changed else 0)
+    changed1 = update_readme(repo)
+    changed2 = update_featured_table(repo)
+    sys.exit(0 if changed1 or changed2 else 1)
 
 
 if __name__ == "__main__":
