@@ -52,7 +52,7 @@ I design and operate reliable, scalable, and secure cloud platforms. I specializ
 
 <p align="center"><em>Highlighted work showcasing platform engineering, observability, automation, and SRE practices.</em></p>
 
-> 🆕 **Latest:** [floci-devsecops-security-platform](https://github.com/iampraveen6/floci-devsecops-security-platform) — An enterprise DevSecOps security platform using Floci.io/AWS. Features automated SAST/SCA....
+> 🆕 **Latest:** [floci-devsecops-security-platform](https://github.com/iampraveen6/floci-devsecops-security-platform) — An enterprise DevSecOps security platform using Floci.io/AWS. Features....
 
 | Project | What it demonstrates | Link |
 |---|---|---|
