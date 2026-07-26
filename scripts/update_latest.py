@@ -139,7 +139,7 @@ def update_featured_table(repo):
         desc = cols[1]
         if proj.endswith(" ✨"):
             proj = proj[:-2].rstrip()
-        desc = re.sub(r"^\*\*New(\*\* —| —\*\*)\s*", "", desc)
+        desc = re.sub(r"^(?:\*\*New(?:\*\* —| —\*\*)\s*)+", "", desc)
         cols[0] = proj
         cols[1] = desc
         if proj.startswith(f"[{name}]"):
