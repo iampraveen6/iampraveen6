@@ -44,6 +44,10 @@ I design and operate reliable, scalable, and secure cloud platforms. I specializ
   <img src="https://skillicons.dev/icons?i=azure,aws,kubernetes,docker,terraform,githubactions,jenkins,git,linux,bash,python,go,grafana,prometheus" />
 </p>
 
+<p align="center">
+  <img src="https://img.shields.io/badge/Floci.io-DevSecOps-1E90FF?style=for-the-badge" alt="Floci.io DevSecOps" />
+</p>
+
 ## 🚀 Featured Projects
 
 <p align="center"><em>Highlighted work showcasing platform engineering, observability, automation, and SRE practices.</em></p>
