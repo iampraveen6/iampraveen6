@@ -51,7 +51,10 @@ def sanitize_description(desc):
         return "New repository"
     desc = " ".join(desc.split()).replace("|", "\\|")
     if len(desc) > 90:
-        desc = desc[:87].rstrip() + "..."
+        cutoff = desc.rfind(" ", 0, 90)
+        if cutoff == -1:
+            cutoff = 90
+        desc = desc[:cutoff].rstrip() + "..."
     return desc
 
 
@@ -136,8 +139,7 @@ def update_featured_table(repo):
         desc = cols[1]
         if proj.endswith(" ✨"):
             proj = proj[:-2].rstrip()
-        if desc.startswith("**New —** "):
-            desc = desc[len("**New —** "):]
+        desc = re.sub(r"^\*\*New(\*\* —| —\*\*)\s*", "", desc)
         cols[0] = proj
         cols[1] = desc
         if proj.startswith(f"[{name}]"):
