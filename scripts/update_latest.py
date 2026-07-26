@@ -50,6 +50,8 @@ def sanitize_description(desc):
     if not desc:
         return "New repository"
     desc = " ".join(desc.split()).replace("|", "\\|")
+    # Remove any pre-existing trailing ellipsis so we don't get SAST/SCA......
+    desc = re.sub(r"\s*\.{3,}\s*$", "", desc)
     if len(desc) > 90:
         cutoff = desc.rfind(" ", 0, 90)
         if cutoff == -1:
