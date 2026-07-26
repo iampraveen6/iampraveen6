@@ -64,7 +64,7 @@ def update_readme(repo):
     name = repo["name"]
     url = f"https://github.com/{OWNER}/{name}"
     desc = sanitize_description(repo.get("description"))
-    new_line = f"> 🆕 **Latest:** [{name}]({url}) — {desc}."
+    new_line = f"> 🆕 **Latest:** [{name}]({url}) — {desc}"
 
     readme_path = None
     for cand in README_CANDIDATES:
