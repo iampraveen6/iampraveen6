@@ -52,13 +52,13 @@ I design and operate reliable, scalable, and secure cloud platforms. I specializ
 
 | Project | What it demonstrates | Link |
 |---|---|---|
-| [PulseOps](https://github.com/iampraveen6/PulseOps) ✨ | **New** — Cloud-native SRE observability platform on Kubernetes with OpenTelemetry, Prometheus SLOs, Grafana, Jaeger, chaos injection, and incident simulation. | [repo](https://github.com/iampraveen6/PulseOps) |
+| [floci-devsecops-security-platform](https://github.com/iampraveen6/floci-devsecops-security-platform) ✨ | **New** — Enterprise DevSecOps security platform with automated SAST/SCA, OPA/Checkov policy gates, container SBOM, and GuardDuty threat detection. | [repo](https://github.com/iampraveen6/floci-devsecops-security-platform) |
+| [PulseOps](https://github.com/iampraveen6/PulseOps) | Cloud-native SRE observability platform on Kubernetes with OpenTelemetry, Prometheus SLOs, Grafana, Jaeger, chaos injection, and incident simulation. | [repo](https://github.com/iampraveen6/PulseOps) |
 | [CloudForge](https://github.com/iampraveen6/Cloudforge) | Built a self-service Azure IDP, enabling developers to provision secure, production-ready environments in minutes. | [repo](https://github.com/iampraveen6/Cloudforge) |
 | [TraceOps](https://github.com/iampraveen6/TraceOps) | Engineered a full observability stack to provide deep system visibility, reducing MTTR for critical incidents. | [repo](https://github.com/iampraveen6/TraceOps) |
 | [Flask EKS CI/CD](https://github.com/iampraveen6/flask-eks-terraform-cicd) | Automated the deployment of a Python application to AWS EKS, achieving zero-downtime releases via a GitOps workflow. | [repo](https://github.com/iampraveen6/flask-eks-terraform-cicd) |
 | [GeminiGuard](https://github.com/iampraveen6/GeminiGuard-Autonomous-Self-Healing-CI-CD-Agent) | Developed an autonomous CI/CD agent that uses AI to detect and fix build failures, improving pipeline reliability. | [repo](https://github.com/iampraveen6/GeminiGuard-Autonomous-Self-Healing-CI-CD-Agent) |
 | [Serverless Cloud Automation](https://github.com/iampraveen6/Serverless-Architecture-Cloud-Automation) | Created serverless functions to automate cloud operations, reducing manual toil for tasks like resource management and compliance. | [repo](https://github.com/iampraveen6/Serverless-Architecture-Cloud-Automation) |
-| [Floci DevSecOps](https://github.com/iampraveen6/floci-devsecops-security-platform) | An enterprise DevSecOps security platform with automated SAST/SCA, OPA/Checkov policy gates, container SBOM, and GuardDuty threat detection. | [repo](https://github.com/iampraveen6/floci-devsecops-security-platform) |
 | [Terraform Conditional VPC-EC2](https://github.com/iampraveen6/terraform-conditional-vpc-ec2) | A Terraform module that conditionally provisions an AWS VPC and an optional EC2 instance for dynamic, infrastructure-as-code environments. | [repo](https://github.com/iampraveen6/terraform-conditional-vpc-ec2) |
 
 ## 📊 GitHub Statistics
