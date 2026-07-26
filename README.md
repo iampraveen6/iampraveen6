@@ -48,11 +48,11 @@ I design and operate reliable, scalable, and secure cloud platforms. I specializ
 
 <p align="center"><em>Highlighted work showcasing platform engineering, observability, automation, and SRE practices.</em></p>
 
-> 🆕 **Latest:** [floci-devsecops-security-platform](https://github.com/iampraveen6/floci-devsecops-security-platform) — Enterprise DevSecOps security platform with SAST/SCA, OPA/Checkov policy gates, container SBOM, and GuardDuty threat detection.
+> 🆕 **Latest:** [floci-devsecops-security-platform](https://github.com/iampraveen6/floci-devsecops-security-platform) — An enterprise DevSecOps security platform using Floci.io/AWS. Features automated SAST/S....
 
 | Project | What it demonstrates | Link |
 |---|---|---|
-| [floci-devsecops-security-platform](https://github.com/iampraveen6/floci-devsecops-security-platform) ✨ | **New** — Enterprise DevSecOps security platform with automated SAST/SCA, OPA/Checkov policy gates, container SBOM, and GuardDuty threat detection. | [repo](https://github.com/iampraveen6/floci-devsecops-security-platform) |
+| [floci-devsecops-security-platform](https://github.com/iampraveen6/floci-devsecops-security-platform) ✨ | **New —** **New** — Enterprise DevSecOps security platform with automated SAST/SCA, OPA/Checkov policy gates, container SBOM, and GuardDuty threat detection. | [repo](https://github.com/iampraveen6/floci-devsecops-security-platform) |
 | [PulseOps](https://github.com/iampraveen6/PulseOps) | Cloud-native SRE observability platform on Kubernetes with OpenTelemetry, Prometheus SLOs, Grafana, Jaeger, chaos injection, and incident simulation. | [repo](https://github.com/iampraveen6/PulseOps) |
 | [CloudForge](https://github.com/iampraveen6/Cloudforge) | Built a self-service Azure IDP, enabling developers to provision secure, production-ready environments in minutes. | [repo](https://github.com/iampraveen6/Cloudforge) |
 | [TraceOps](https://github.com/iampraveen6/TraceOps) | Engineered a full observability stack to provide deep system visibility, reducing MTTR for critical incidents. | [repo](https://github.com/iampraveen6/TraceOps) |
