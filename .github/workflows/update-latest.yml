@@ -1,0 +1,41 @@
+name: Update Latest Project Badge
+
+concurrency:
+  group: update-latest
+  cancel-in-progress: true
+
+on:
+  schedule:
+    # Run every 3 hours so the Latest badge stays current
+    - cron: '0 */3 * * *'
+  workflow_dispatch:
+
+jobs:
+  update-latest:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Update Latest badge
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python3 scripts/update_latest.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md README.MD 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No changes detected. Skipping commit."
+          else
+            git commit -m "chore: update latest project badge"
+            git pull --rebase
+            git push
+          fi
