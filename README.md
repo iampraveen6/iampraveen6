@@ -49,31 +49,8 @@ I design and operate reliable, scalable, and secure cloud platforms. I specializ
 | [Flask EKS CI/CD](https://github.com/iampraveen6/flask-eks-terraform-cicd) | Automated the deployment of a Python application to AWS EKS, achieving zero-downtime releases via a GitOps workflow. | [repo](https://github.com/iampraveen6/flask-eks-terraform-cicd) |
 | [GeminiGuard](https://github.com/iampraveen6/GeminiGuard-Autonomous-Self-Healing-CI-CD-Agent) | Developed an autonomous CI/CD agent that uses AI to detect and fix build failures, improving pipeline reliability. | [repo](https://github.com/iampraveen6/GeminiGuard-Autonomous-Self-Healing-CI-CD-Agent) |
 | [Serverless Cloud Automation](https://github.com/iampraveen6/Serverless-Architecture-Cloud-Automation) | Created serverless functions to automate cloud operations, reducing manual toil for tasks like resource management and compliance. | [repo](https://github.com/iampraveen6/Serverless-Architecture-Cloud-Automation) |
-
-## 📚 Recent Repositories
-
-<p align="center"><em>Auto-synced from public repos (sorted by last push). New repos appear here automatically.</em></p>
-
-<!-- START AUTO-REPOS -->
-| Repository | Description | ⭐ | Last Push |
-|------------|-------------|---|-----------|
-| [floci-devsecops-security-platform](https://github.com/iampraveen6/floci-devsecops-security-platform) | An enterprise DevSecOps security platform using Floci.io/AWS. Features a... | 0 | 2026-07-26 |
-| [PulseOps](https://github.com/iampraveen6/PulseOps) | PulseOps is a cloud-native SRE observability platform built on Kubernete... | 0 | 2026-07-25 |
-| [Serverless-Architecture-Cloud-Automation](https://github.com/iampraveen6/Serverless-Architecture-Cloud-Automation) | — | 0 | 2026-07-10 |
-| [GeminiGuard-Autonomous-Self-Healing-CI-CD-Agent](https://github.com/iampraveen6/GeminiGuard-Autonomous-Self-Healing-CI-CD-Agent) | Autonomous CI/CD agent powered by Gemini 2.5 Pro — detects failures in l... | 0 | 2026-07-10 |
-| [flask-eks-terraform-cicd](https://github.com/iampraveen6/flask-eks-terraform-cicd) | A cloud-native project demonstrating how to deploy a Flask application o... | 0 | 2026-07-10 |
-| [TraceOps](https://github.com/iampraveen6/TraceOps) | TraceOps is an end-to-end observability platform that integrates tracing... | 0 | 2026-07-10 |
-| [Cloudforge](https://github.com/iampraveen6/Cloudforge) | CloudForge is an Azure-powered Internal Developer Platform (IDP) that en... | 0 | 2026-07-10 |
-| [terraform-conditional-vpc-ec2](https://github.com/iampraveen6/terraform-conditional-vpc-ec2) | A Terraform module that conditionally provisions an AWS VPC and an optio... | 0 | 2025-08-29 |
-| [terraform-s3-project](https://github.com/iampraveen6/terraform-s3-project) | — | 0 | 2025-08-24 |
-| [flask-app-example](https://github.com/iampraveen6/flask-app-example) | — | 0 | 2025-07-13 |
-| [praveencicd](https://github.com/iampraveen6/praveencicd) | — | 0 | 2025-06-22 |
-| [web-server-backups](https://github.com/iampraveen6/web-server-backups) | — | 0 | 2025-05-25 |
-| [system-monitoring-setup](https://github.com/iampraveen6/system-monitoring-setup) | — | 0 | 2025-05-25 |
-| [python](https://github.com/iampraveen6/python) | — | 0 | 2025-05-08 |
-
-_Last updated: 2026-07-26 13:16 UTC_
-<!-- END AUTO-REPOS -->
+| [Floci DevSecOps](https://github.com/iampraveen6/floci-devsecops-security-platform) | An enterprise DevSecOps security platform with automated SAST/SCA, OPA/Checkov policy gates, container SBOM, and GuardDuty threat detection. | [repo](https://github.com/iampraveen6/floci-devsecops-security-platform) |
+| [Terraform Conditional VPC-EC2](https://github.com/iampraveen6/terraform-conditional-vpc-ec2) | A Terraform module that conditionally provisions an AWS VPC and an optional EC2 instance for dynamic, infrastructure-as-code environments. | [repo](https://github.com/iampraveen6/terraform-conditional-vpc-ec2) |
 
 ## 📊 GitHub Statistics
 
