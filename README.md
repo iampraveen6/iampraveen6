@@ -48,7 +48,7 @@ I design and operate reliable, scalable, and secure cloud platforms. I specializ
 
 <p align="center"><em>Highlighted work showcasing platform engineering, observability, automation, and SRE practices.</em></p>
 
-> 🆕 **Latest:** [PulseOps](https://github.com/iampraveen6/PulseOps) — SRE observability sandbox. OTel + Prometheus SLOs + chaos & incident simulation.
+> 🆕 **Latest:** [floci-devsecops-security-platform](https://github.com/iampraveen6/floci-devsecops-security-platform) — Enterprise DevSecOps security platform with SAST/SCA, OPA/Checkov policy gates, container SBOM, and GuardDuty threat detection.
 
 | Project | What it demonstrates | Link |
 |---|---|---|
