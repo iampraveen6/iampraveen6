@@ -64,7 +64,6 @@ I design and operate reliable, scalable, and secure cloud platforms. I specializ
 ## 📊 GitHub Statistics
 
 <p align="center">
-  <img height="170" src="https://github-readme-stats.vercel.app/api?username=iampraveen6&show_icons=true&theme=transparent&hide_border=true" />
   <img height="170" src="https://streak-stats.demolab.com?user=iampraveen6&hide_border=true" />
 </p>
 
