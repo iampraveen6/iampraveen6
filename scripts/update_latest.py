@@ -52,10 +52,10 @@ def sanitize_description(desc):
     desc = " ".join(desc.split()).replace("|", "\\|")
     # Remove any pre-existing trailing ellipsis so we don't get SAST/SCA......
     desc = re.sub(r"\s*\.{3,}\s*$", "", desc)
-    if len(desc) > 90:
-        cutoff = desc.rfind(" ", 0, 90)
+    if len(desc) > 80:
+        cutoff = desc.rfind(" ", 0, 80)
         if cutoff == -1:
-            cutoff = 90
+            cutoff = 80
         desc = desc[:cutoff].rstrip() + "..."
     return desc
 
